@@ -5,8 +5,8 @@ env/
 venv/
 
 # Ignore model artifacts and large files
-models/
-.pkl
+# models/
+# .pkl
 
 # Jupyter checkpoints
 .ipynb_checkpoints/
