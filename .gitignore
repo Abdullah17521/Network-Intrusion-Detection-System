@@ -1,0 +1,16 @@
+# Python artifacts
+__pycache__/
+.venv/
+env/
+venv/
+
+# Ignore model artifacts and large files
+models/
+.pkl
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS files
+Thumbs.db
+desktop.ini
