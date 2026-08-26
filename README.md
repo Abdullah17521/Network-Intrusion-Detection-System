@@ -18,8 +18,7 @@ graph TD;
     B -->|Feature Extraction| C{Machine Learning Models};
     C -->|Algorithm Evaluation| D[Anomaly Classification];
     D -->|Results Display| E[Streamlit Dashboard];
-    E -->|Visual Analytics| F[User / Security Analyst];
-
+    E -->|Visual Analytics| F[User / Security Analyst]; ```
 ## Project contents
 
 - `app.py` - Streamlit application to interact with the trained models.
