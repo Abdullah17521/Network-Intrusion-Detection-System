@@ -1,69 +1,44 @@
-# Network Intrusion Detection System
+# 🛡️ Network Intrusion Detection System (NIDS)
 
-This repository contains code, notebooks, data, and trained models for building and evaluating a network intrusion detection system (NIDS) using machine learning. The project focuses on preprocessing the UNSW-NB15 dataset, training several classification models, and saving models for later use in an application.
+![Python](https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Machine Learning](https://img.shields.io/badge/Machine_Learning-FF9900?style=for-the-badge)
+![Cybersecurity](https://img.shields.io/badge/Cybersecurity-000000?style=for-the-badge)
 
-## Project contents
+## 📌 Overview
+The **Network Intrusion Detection System (NIDS)** is an interactive web-based dashboard built to analyze network traffic and detect potential security threats. Leveraging various **Machine Learning algorithms** (including K-Means, Naive Bayes, and K-Nearest Neighbors), this Streamlit application evaluates and classifies network anomalies, providing an intuitive interface for monitoring network health and identifying malicious activities.
 
-- `app.py` - Streamlit application to interact with the trained models.
-- `train_and_save_models.py` - Script to train models and save them to the `models/` folder.
-- `requirements.txt` - Python package dependencies required to run the project.
-- `models/` - Directory containing serialized model files produced by training.
-- `UNSW_NB15_training-set.csv` - Training dataset (UNSW-NB15).
-- `UNSW_NB15_testing-set.csv` - Testing dataset (UNSW-NB15).
-- Jupyter notebooks:
-  - `1_kmeans_clustering.ipynb`
-  - `2_knn_classification.ipynb`
-  - `3_naive_bayes_classification.ipynb`
-  - `comparison.ipynb`
+## 🏗️ Architecture & Data Flow
 
-## Overview
+Below is the workflow of how network data is processed and evaluated by the ML models:
 
-This project shows a practical workflow for network intrusion detection using classical machine learning:
+```mermaid
+graph TD;
+    A[Network Traffic Data] -->|Import| B[Data Preprocessing];
+    B -->|Feature Extraction| C{Machine Learning Models};
+    C -->|Algorithm Evaluation| D[Anomaly Classification];
+    D -->|Results Display| E[Streamlit Dashboard];
+    E -->|Visual Analytics| F[User / Security Analyst];
 
-- Data loading and preprocessing of the UNSW-NB15 dataset
-- Feature engineering and scaling
-- Training multiple classifiers and comparing performance
-- Saving and loading trained models for inference
-- A simple Streamlit app for demonstration and manual testing
+Features
+Real-time Evaluation: Test and compare different ML algorithms on network datasets.
 
-## Quick start
+Interactive Dashboard: Built with Streamlit for a user-friendly and responsive experience.
 
-1. Create and activate a Python virtual environment (recommended):
+Anomaly Detection: Classifies traffic as normal or malicious to prevent intrusions.
+Create a Virtual Environment (Recommended):
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
+Bash
+python -m venv venv
+# On Windows use:
+venv\Scripts\activate
+# On Mac/Linux use:
+source venv/bin/activate
+3. Install the required dependencies:
 
-2. Install dependencies:
-
-```powershell
+Bash
 pip install -r requirements.txt
-```
+4. Run the Streamlit Dashboard:
 
-3. Train models (optional if pre-trained models exist in `models/`):
-
-```powershell
-python train_and_save_models.py
-```
-
-4. Run the Streamlit application:
-
-```powershell
+Bash
 streamlit run app.py
-```
-
-## Notes and recommendations
-
-- The training scripts may take significant time depending on available CPU and data size. Use a subset of the data for quick experiments.
-- Review `requirements.txt` and pin versions if reproducible environments are required.
-- Keep the `models/` directory in `.gitignore` for large files if you plan to store models in an external artifact store.
-
-## Structure for contributions
-
-- Use branches for features: `feature/<name>`
-- Provide clear commit messages and tests for changed logic
-
-## License
-
-This project does not include a license file. Add a license if you plan to make the code public.
