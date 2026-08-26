@@ -7,18 +7,6 @@
 
 ## 📌 Overview
 The **Network Intrusion Detection System (NIDS)** is an interactive web-based dashboard built to analyze network traffic and detect potential security threats. Leveraging various **Machine Learning algorithms** (including K-Means, Naive Bayes, and K-Nearest Neighbors), this Streamlit application evaluates and classifies network anomalies, providing an intuitive interface for monitoring network health and identifying malicious activities.
-
-## 🏗️ Architecture & Data Flow
-
-Below is the workflow of how network data is processed and evaluated by the ML models:
-
-```mermaid
-graph TD;
-    A[Network Traffic Data] -->|Import| B[Data Preprocessing];
-    B -->|Feature Extraction| C{Machine Learning Models};
-    C -->|Algorithm Evaluation| D[Anomaly Classification];
-    D -->|Results Display| E[Streamlit Dashboard];
-    E -->|Visual Analytics| F[User / Security Analyst]; ```
 ## Project contents
 
 - `app.py` - Streamlit application to interact with the trained models.
@@ -72,6 +60,12 @@ streamlit run app.py
 - Use branches for features: `feature/<name>`
 - Provide clear commit messages and tests for changed logic
 
-## License
+Below is the workflow of how network data is processed and evaluated by the ML models:
 
-This project does not include a license file. Add a license if you plan to make the code public.
+```mermaid
+graph TD;
+    A[Network Traffic Data] -->|Import| B[Data Preprocessing];
+    B -->|Feature Extraction| C{Machine Learning Models};
+    C -->|Algorithm Evaluation| D[Anomaly Classification];
+    D -->|Results Display| E[Streamlit Dashboard];
+    E -->|Visual Analytics| F[User / Security Analyst]; 
